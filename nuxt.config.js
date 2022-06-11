@@ -19,10 +19,7 @@ export default {
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: [
-      'devextreme/dist/css/dx.light.css'
-  ],
-
+  css: ["devextreme/dist/css/dx.light.css"],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [],
@@ -34,11 +31,36 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/tailwindcss
     "@nuxtjs/tailwindcss",
+    
+
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: [],
-
+  modules: ["primevue/nuxt"],
+  // module: {
+  //   rules: [
+  //     {
+  //       test: /\.s[ac]ss$/i,
+  //       use: [
+  //         "style-loader",
+  //         "css-loader",
+  //         {
+  //           loader: "sass-loader",
+  //           options: {
+  //             // Prefer `dart-sass`
+  //             implementation: require("sass"),
+  //           },
+  //         },
+  //       ],
+  //     },
+  //   ],
+  // },
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {},
+  build: {
+    transpile: ["primevue"],
+  },
+
+  primevue: {
+    components: ["DataTable", "Column", "Row", "ColumnGroup"],
+  },
 };
